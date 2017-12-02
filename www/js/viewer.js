@@ -55,7 +55,7 @@ function launchViewer(urn) {
  */
 function onDocumentLoadSuccess(doc) {
   // A document contains references to 3D and 2D viewables.
-  var viewables = Autodesk.Viewing.Document.getSubItemsWithProperties(doc.getRootItem(), {'type': 'geometry'}, true);
+  var viewables = Autodesk.Viewing.Document.getSubItemsWithProperties(doc.getRootItem(), {'type': 'geometry', 'role': '3d'}, true);
   if (viewables.length === 0) {
     console.error('Document contains no viewables.');
     return;
